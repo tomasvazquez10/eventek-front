@@ -1,0 +1,26 @@
+<app-toolbar></app-toolbar>
+
+<mat-card *ngIf="ticket">
+    <mat-card-header>
+      <mat-card-title>Transfer Ticket</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <h3>{{ ticket.type }} - ${{ ticket.price }}</h3>
+      <div *ngIf="event"><p><strong>Event :</strong> {{ event.name }}</p></div>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Select user to transfer</mat-label>
+        <mat-select [(value)]="selectedUsername">
+          <mat-option *ngFor="let username of usernames" [value]="username">
+            {{ username }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" (click)="transferTicket()">
+        Transfer Ticket
+      </button>
+    </mat-card-content>
+  </mat-card>
+  

@@ -1,0 +1,69 @@
+[
+    {
+      "id": 1,
+      "name": "Summer Music Festival",
+      "date": "2024-07-15",
+      "time": "12:00 PM",
+      "location": "Central Park, New York",
+      "image": "https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/nir960.png",
+      "tickets": [
+        {
+          "type": "General Admission",
+          "price": 50
+        },
+        {
+          "type": "VIP",
+          "price": 150
+        },
+        {
+          "type": "Backstage Pass",
+          "price": 250
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Tech Conference 2024",
+      "date": "2024-09-10",
+      "time": "9:00 AM",
+      "location": "Convention Center, San Francisco",
+      "image": "https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/trap_s_24vg.jpg",
+      "tickets": [
+        {
+          "type": "Standard",
+          "price": 100
+        },
+        {
+          "type": "Premium",
+          "price": 200
+        },
+        {
+          "type": "Workshop Bundle",
+          "price": 350
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Tech Conference 2025",
+      "date": "2025-09-15",
+      "time": "9:00 AM",
+      "location": "Convention Center, San Francisco",
+      "image": "https://prod-cms-static.ticketek.com.ar/sites/default/files/images/show-header/disneyva960.png",
+      "tickets": [
+        {
+          "type": "Standard",
+          "price": 100
+        },
+        {
+          "type": "Premium",
+          "price": 200
+        },
+        {
+          "type": "Workshop Bundle",
+          "price": 350
+        }
+      ]
+    }
+  ]
+  

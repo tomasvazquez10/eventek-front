@@ -1,0 +1,27 @@
+<app-toolbar></app-toolbar>
+
+<div class="content">
+  <mat-card class="swapzone-card">
+    <mat-card-header>
+      <mat-card-title>Swap Zone Tickets</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div *ngIf="tickets.length > 0; else noTickets">
+        <mat-list>
+          <mat-list-item *ngFor="let ticket of tickets">
+            <div>
+              <h4>{{ ticket.type }} - ${{ ticket.price }}</h4>
+              <p><strong>Event:</strong> {{ ticket.event.name }}</p>
+              <p><strong>Status:</strong> {{ ticket.active ? 'Active' : 'Inactive' }}</p>
+              <p><strong>Event ID:</strong> {{ ticket.eventId }}</p>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <ng-template #noTickets>
+        <p>No tickets in the swap zone.</p>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

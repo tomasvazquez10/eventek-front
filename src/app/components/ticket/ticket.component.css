@@ -1,0 +1,14 @@
+.event-image {
+    width: 100px;  /* Ajusta el ancho según sea necesario */
+    height: auto;  /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+    margin: 0 left; /* Centra la imagen si es necesario */
+    display: block; /* Asegura que la imagen se muestre como un bloque */
+  }
+
+
+  .button {
+    display: block;
+    margin-bottom: 106px; /* Ajusta el valor según el espacio que desees */
+}
+  

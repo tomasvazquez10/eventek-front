@@ -1,0 +1,25 @@
+<app-toolbar></app-toolbar>
+<mat-card *ngIf="ticket">
+    <mat-card-header>
+      <mat-card-title>{{ ticket.type }}</mat-card-title>
+      <mat-card-subtitle>{{ ticket.active ? 'Active' : 'Inactive' }}</mat-card-subtitle>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <p><strong>Username:</strong> {{ ticket.username }}</p>
+      <p><strong>Price:</strong> {{ ticket.price }}</p>
+  
+      <div *ngIf="event">
+        <h4>Event Information:</h4>
+        <img mat-card-image [src]="event.image" [alt]="event.name" style="max-width: 100px;">
+        <p><strong>Event Name:</strong> {{ event.name }}</p>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p><strong>Location:</strong> {{ event.location }}</p>
+      </div>
+    </mat-card-content>
+  
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [routerLink]="['/event', ticket.eventId]">View Event</button>
+    </mat-card-actions>
+  </mat-card>
+  

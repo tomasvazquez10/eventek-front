@@ -1,0 +1,36 @@
+[
+    {
+      "id": 1,
+      "type": "General Admission",
+      "price": 50,
+      "active": true,
+      "username": "user",
+      "eventId": 1
+    },
+    {
+        "id": 2,
+        "type": "VIP",
+        "price": 200,
+        "active": true,
+        "username": "user",
+        "eventId": 2
+      },
+      {
+        "id": 3,
+        "type": "General Admission",
+        "price": 50,
+        "active": true,
+        "username": "user",
+        "eventId": 1,
+        "state": "swapzone"
+      },
+      {
+        "id": 4,
+        "type": "VIP",
+        "price": 200,
+        "active": true,
+        "username": "user2",
+        "eventId": 2,
+        "state": "swapzone"
+      }
+  ]

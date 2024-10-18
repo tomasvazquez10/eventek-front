@@ -1,0 +1,54 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .event-card {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .swapzone-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .nft-marketplace {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    max-width: 400px;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .events-container {
+      flex-direction: column;
+    }
+  
+    .event-card {
+      max-width: 100%;
+    }
+  }
+
+  .event-detail-card {
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  

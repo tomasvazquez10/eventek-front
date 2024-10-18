@@ -1,0 +1,19 @@
+<app-toolbar></app-toolbar>
+
+<mat-card class="user-profile">
+    <mat-card-header>
+      <mat-card-title>{{ username }}</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <h3>Your Tickets</h3>
+      <div *ngIf="tickets && tickets.length > 0; else noTickets">
+        <app-ticket *ngFor="let ticket of tickets" [ticket]="ticket"></app-ticket>
+      </div>
+      <ng-template #noTickets>
+        <p>No tickets found.</p>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+  
+  

@@ -1,0 +1,42 @@
+<app-toolbar></app-toolbar>
+  
+  <div *ngIf="event" class="sale-container">
+    <div class="event-card-container">
+      <mat-card class="event-card">
+        <mat-card-header>
+          <mat-card-title>{{ event.name }}</mat-card-title>
+          <mat-card-subtitle>{{ event.date }} at {{ event.time }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="event.image" [alt]="event.name" />
+        <mat-card-content>
+          <p><strong>Location:</strong> {{ event.location }}</p>
+  
+          <h3>Select Ticket Types:</h3>
+          <div *ngFor="let ticket of event.tickets" class="ticket-selection">
+            <span>{{ ticket.type }}:</span>
+            <mat-form-field appearance="fill">
+              <mat-label>Quantity</mat-label>
+              <mat-select [(ngModel)]="ticketQuantities[ticket.type]" (selectionChange)="onQuantityChange(ticket.type)">
+                <mat-option *ngFor="let quantity of [0, 1, 2, 3, 4, 5]" [value]="quantity">
+                  {{ quantity }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <span>Price: ${{ ticket.price }} each</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card class="summary-card">
+        <h3>Purchase Summary:</h3>
+        <ul>
+          <li *ngFor="let ticket of event.tickets">
+            {{ ticket.type }}: {{ ticketQuantities[ticket.type] || 0 }} x ${{ ticket.price }} = ${{ (ticketQuantities[ticket.type] || 0) * ticket.price }}
+          </li>
+        </ul>
+        <h3>Total Price: ${{ totalPrice }}</h3>
+        <button mat-raised-button color="primary" (click)="confirmPurchase()">Confirm Purchase</button>
+      </mat-card>
+    </div>
+  </div>
+  

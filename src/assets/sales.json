@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "username": "user",
+      "tickets": [
+        {
+          "type": "General Admission",
+          "price": 50,
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 100,
+      "date": ""
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "tickets": [
+        {
+          "type": "Premium",
+          "price": 200,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 200
+    }
+  ]
+
+  
+ 
+  
