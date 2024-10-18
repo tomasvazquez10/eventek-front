@@ -10,7 +10,7 @@ import { Event } from '../../models/event.model'; // Modelo para el evento
 })
 export class TicketComponent implements OnInit {
   @Input() ticket!: Ticket; // Recibe los datos del ticket como input
-  event!: Event | null; // Almacena los datos del evento
+  event!: Event; // Almacena los datos del evento
 
   constructor(private ticketService: TicketService) {}
 

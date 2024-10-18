@@ -1,23 +1,21 @@
 <mat-card class="ticket-card">
-    <mat-card-header>
-    <mat-card-title *ngIf="event">{{ event.name}}</mat-card-title>
-    </mat-card-header>
-  
-    <mat-card-content>
-      <div *ngIf="event">
-        <p><strong>Date:</strong> {{ event.date }}</p>
-        <p><strong>Type:</strong> {{ ticket.type }}</p>
-      </div>
-  
-      <div *ngIf="!event">
-        <p>Loading event information...</p>
-      </div>
-    </mat-card-content>
-  
-    <mat-card-actions *ngIf="event">
-      <button mat-raised-button color="primary" [routerLink]="['/ticket-data', ticket.id]">View Ticket</button>
-      <button mat-raised-button color="primary" [routerLink]="['/event', event.id]">View Event</button>
-      <button mat-raised-button color="primary" [routerLink]="['/transfer', ticket.id]">Transfer Ticket</button>
-    </mat-card-actions>
-  </mat-card>
-  
+  <mat-card-header>
+    <mat-card-title>{{ ticket.type }} - ${{ ticket.price }}</mat-card-title>
+    <mat-card-subtitle>{{ ticket.active ? 'Active' : 'Inactive' }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image [src]="event.image" [alt]="event.name" class="event-img">
+
+  <mat-card-content>
+    <div class="ticket-info">
+      <p><strong>Event Name:</strong> {{ event.name }}</p>
+      <p><strong>Date:</strong> {{ event.date }}</p>
+      <p><strong>Location:</strong> {{ event.location }}</p>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" [routerLink]="['/event', event.id]">View Event</button>
+    <button mat-raised-button color="accent" [routerLink]="['/transfer', ticket.id]">Transfer Ticket</button>
+  </mat-card-actions>
+</mat-card>

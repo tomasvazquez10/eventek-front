@@ -10,6 +10,7 @@ import { SaleComponent } from './components/sale/sale.component';
 import { UserComponent } from './components/user/user.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { SwapZoneComponent } from './components/swapzone/swapzone.component';
+import { CreateEventComponent } from './components/create-event/create-event.component';
 import { TicketDataComponent } from './components/ticket-data/ticket-data.component';
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'ticket-data/:id', component: TicketDataComponent },
   { path: 'transfer/:id', component: TransferComponent },
   { path: 'home', component: EventekComponent },
+  { path: 'create-event', component: CreateEventComponent },
   { path: 'swapzone', component: SwapZoneComponent }, // Ruta protegida
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
   { path: 'login', component: LoginComponent },

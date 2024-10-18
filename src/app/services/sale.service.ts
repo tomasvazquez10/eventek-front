@@ -10,12 +10,13 @@ import { map } from 'rxjs/operators';
 })
 export class SaleService {
   private salesUrl = 'assets/sales.json'; // Ruta al archivo JSON de ventas
+  private apiUrl = 'http://localhost:3000/api/sales';
 
   constructor(private http: HttpClient) {}
 
   // Método para leer las ventas desde el archivo JSON
   getSales(): Observable<Sale[]> {
-    return this.http.get<Sale[]>(this.salesUrl);
+    return this.http.get<Sale[]>(this.apiUrl);
   }
 
   // Método para simular la escritura de una venta en localStorage
@@ -23,7 +24,7 @@ export class SaleService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     console.log("sale");
     console.log(sale);
-    return this.http.post(this.salesUrl, sale, { headers });
+    return this.http.post(this.apiUrl, sale);
   }
 
   // Obtener las ventas guardadas en localStorage

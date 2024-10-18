@@ -30,6 +30,12 @@ import { TicketComponent } from './components/ticket/ticket.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { SwapZoneComponent } from './components/swapzone/swapzone.component';
 import { TicketDataComponent } from './components/ticket-data/ticket-data.component';
+import { CreateEventComponent } from './components/create-event/create-event.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
 
 
 @NgModule({
@@ -46,7 +52,8 @@ import { TicketDataComponent } from './components/ticket-data/ticket-data.compon
     TicketComponent,
     TransferComponent,
     SwapZoneComponent,
-    TicketDataComponent
+    TicketDataComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +69,9 @@ import { TicketDataComponent } from './components/ticket-data/ticket-data.compon
     MatListModule,
     MatInputModule,
     MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [

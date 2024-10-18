@@ -1,0 +1,62 @@
+<mat-card class="create-event-card">
+    <mat-card-header>
+      <mat-card-title>Create New Event</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Event Name</mat-label>
+          <input matInput formControlName="name" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Time</mat-label>
+          <input matInput formControlName="time" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Location</mat-label>
+          <input matInput formControlName="location" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Image URL</mat-label>
+          <input matInput formControlName="image" required>
+        </mat-form-field>
+  
+        <mat-divider></mat-divider>
+  
+        <h4>Tickets</h4>
+        <div formArrayName="tickets">
+          <div *ngFor="let ticket of tickets.controls; let i = index" [formGroupName]="i">
+            <mat-form-field appearance="fill">
+              <mat-label>Type</mat-label>
+              <input matInput formControlName="type" required>
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill">
+              <mat-label>Price</mat-label>
+              <input matInput formControlName="price" type="number" required>
+            </mat-form-field>
+  
+            <button mat-button color="warn" (click)="removeTicket(i)">Remove</button>
+          </div>
+        </div>
+  
+        <button mat-button color="primary" (click)="addTicket()">Add Ticket</button>
+  
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!eventForm.valid">Create Event</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

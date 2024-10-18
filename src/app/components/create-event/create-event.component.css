@@ -1,0 +1,14 @@
+.create-event-card {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
